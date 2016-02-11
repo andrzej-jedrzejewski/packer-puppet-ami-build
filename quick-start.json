@@ -1,16 +1,26 @@
 {
   "variables": {
-    "access_key": "AKIAJOVHJ37DBJDIJDEA",
-    "secret_key": "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"
+    "access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}"
   },
   "builders": [{
     "type": "amazon-ebs",
-    "access_key": "{{user `access_key`}}",
-    "secret_key": "{{user `access_key`}}",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_access_key`}}",
     "region": "eu-west-1",
-    "source_ami": "ami-bff32ccc",
-    "instance_type": "t2.micro",
-    "ssh_username": "andrzej",
+    "source_ami": "ami-018d2972",
+    "instance_type": "t1.micro",
+    "ssh_username": "root",
     "ami_name": "packer-example {{timestamp}}"
-  }]
+  }],
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/setup-base-system.sh",
+        "scripts/install-elasticsearch.sh",
+        "scripts/configure-elasticsearch.sh"
+      ]
+    },
+  ]
 }
