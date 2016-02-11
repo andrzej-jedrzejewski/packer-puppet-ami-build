@@ -16,11 +16,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "scripts": [
-        "scripts/setup-base-system.sh",
-        "scripts/install-elasticsearch.sh",
-        "scripts/configure-elasticsearch.sh"
-      ]
-    },
+      "scripts": "scripts/setup-base-system.sh"
+    }
   ]
 }
