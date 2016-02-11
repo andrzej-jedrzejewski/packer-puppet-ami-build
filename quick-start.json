@@ -1,0 +1,16 @@
+{
+  "variables": {
+    "access_key": "AKIAJOVHJ37DBJDIJDEA",
+    "secret_key": "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"
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `access_key`}}",
+    "secret_key": "{{user `access_key`}}",
+    "region": "eu-west-1",
+    "source_ami": "ami-bff32ccc",
+    "instance_type": "t2.micro",
+    "ssh_username": "andrzej",
+    "ami_name": "packer-example {{timestamp}}"
+  }]
+}
