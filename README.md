@@ -10,3 +10,8 @@ Packer v0.8.6:
 
 Installation
 -----------
+
+Run Packer to build the AMI:
+```
+$ packer build quick-start.json
+```
