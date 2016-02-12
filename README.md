@@ -1,4 +1,4 @@
-Generating AWS AMI with packer
+Create AWS AMIs with packer
 =============
 
 
