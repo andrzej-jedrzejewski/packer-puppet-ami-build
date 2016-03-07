@@ -48,6 +48,10 @@ done
 #Read image ID
 AMI_ID="$(aws ec2 describe-import-image-tasks --import-task-ids $import_task_id | jsawk  'return this.ImportImageTasks' | jsawk -n 'out(this.ImageId)')"
 
+sleep 5
+
+aws ec2 create-tags --resources ami-0307be70 --tags 'Key="Name",Value=$ova_file'
+
 echo "Image creation has finished!"
 echo "AMI ID is: $AMI_ID"
 
