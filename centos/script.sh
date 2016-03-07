@@ -27,7 +27,7 @@ packer build -var-file=variables.json template.json  &&  echo "Image creation is
 
 aws s3 cp "$ova_directory/$ova_file" s3://$S3_bucket
 
-import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.json  | jsawk -n 'out(this.ImportTaskId)')"
+import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.json --description $ova_file  | jsawk -n 'out(this.ImportTaskId)')"
 sleep 5s
 echo "Yor image ID is as follow:"
 echo $import_task_id
