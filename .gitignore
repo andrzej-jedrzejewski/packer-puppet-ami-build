@@ -1,1 +1,3 @@
 iso/*
+ubuntu/packer_cache/*
+*.iso
