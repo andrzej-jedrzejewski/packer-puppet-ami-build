@@ -5,7 +5,7 @@
     "UserBucket": { 
       "S3Bucket": "andrzejjbucket", 
       "S3Key" : "centos7-lvm-xfs.ova" 
-    } 
-  } 
+    }
+  }
   ]
 }

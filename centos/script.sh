@@ -12,6 +12,9 @@ ova_file="$ova_file-$(jsawk 'return this.profile' < variables.json)"
 ova_file="$ova_file.ova"
 S3_bucket="$(jsawk 'return this.S3_bucket_name' < variables.json)"
 
+S3Key="$(cat S3import-task.json| jsawk 'return this.DiskContainers' | jsawk 'return this.UserBucket' | jsawk -n 'out(this.S3Key)')"
+sed -i -- "s/$S3Key/$ova_file/g" S3import-task.json
+
 start_date=$(date +%s);
 echo "You start at $start_date"
 
@@ -24,7 +27,7 @@ packer build -var-file=variables.json template.json  &&  echo "Image creation is
 
 aws s3 cp "$ova_directory/$ova_file" s3://$S3_bucket
 
-import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.json | jsawk -n 'out(this.ImportTaskId)')"
+import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.json  | jsawk -n 'out(this.ImportTaskId)')"
 sleep 5s
 echo "Yor image ID is as follow:"
 echo $import_task_id
