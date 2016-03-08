@@ -1,10 +1,10 @@
-{ 
-  "oleole": "Centos 7.2", 
-  "DiskContainers": [ { 
-    "oleole": "The firs image", 
-    "UserBucket": { 
-      "S3Bucket": "andrzejjbucket", 
-      "S3Key" : "centos7-lvm-xfs.ova" 
+{
+  "Description": "Ubuntu 14.04",
+  "DiskContainers": [ {
+    "Description": "The first image",
+    "UserBucket": {
+      "S3Bucket": "andrzejjbucket",
+      "S3Key" : "Ubuntu_64-cloud.ova"
     }
   }
   ]

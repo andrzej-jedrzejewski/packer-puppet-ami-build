@@ -1,1 +1,2 @@
-Andrzej Jedrzejewski
+Andrzej Jedrzejewski <andrzejj@kainos.com>
+Mike McClay <M.McClay@kainos.com>
