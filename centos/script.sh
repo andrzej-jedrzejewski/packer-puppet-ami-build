@@ -51,6 +51,7 @@ AMI_ID="$(aws ec2 describe-import-image-tasks --import-task-ids $import_task_id 
 
 sleep 5
 
+aws ec2 create-tags --resources $AMI_ID --tags "Key="Name",Value=$ova_file"
 
 
 echo "Image creation has finished!"
