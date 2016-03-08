@@ -14,6 +14,7 @@ S3_bucket="$(jsawk 'return this.S3_bucket_name' < variables.json)"
 
 S3Key="$(cat S3import-task.json| jsawk 'return this.DiskContainers' | jsawk 'return this.UserBucket' | jsawk -n 'out(this.S3Key)')"
 sed -i -- "s/$S3Key/$ova_file/g" S3import-task.json
+rm S3import-task.json--
 
 
 start_date=$(date +%s);

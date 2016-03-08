@@ -1,7 +1,7 @@
 { 
-  "Description": "Centos 7.2", 
+  "oleole": "Centos 7.2", 
   "DiskContainers": [ { 
-    "Description": "The firs image", 
+    "oleole": "The firs image", 
     "UserBucket": { 
       "S3Bucket": "andrzejjbucket", 
       "S3Key" : "centos7-lvm-xfs.ova" 

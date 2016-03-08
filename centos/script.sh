@@ -14,6 +14,7 @@ S3_bucket="$(jsawk 'return this.S3_bucket_name' < variables.json)"
 
 S3Key="$(cat S3import-task.json| jsawk 'return this.DiskContainers' | jsawk 'return this.UserBucket' | jsawk -n 'out(this.S3Key)')"
 sed -i -- "s/$S3Key/$ova_file/g" S3import-task.json
+rm S3import-task.json--
 
 start_date=$(date +%s);
 echo "You start at $start_date"
@@ -50,7 +51,7 @@ AMI_ID="$(aws ec2 describe-import-image-tasks --import-task-ids $import_task_id 
 
 sleep 5
 
-aws ec2 create-tags --resources $AMI_ID --tags "Key="Name",Value=$ova_file"
+
 
 echo "Image creation has finished!"
 echo "AMI ID is: $AMI_ID"
