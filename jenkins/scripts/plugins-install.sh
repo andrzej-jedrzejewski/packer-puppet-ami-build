@@ -1,10 +1,10 @@
 #!/bin/bash
 
-sudo apt-get install -y unzip
+apt-get install -y unzip
 
 wget http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip
-sudo mkdir /usr/local/ec2
-sudo unzip ec2-api-tools.zip -d /usr/local/ec2
+mkdir /usr/local/ec2
+unzip ec2-api-tools.zip -d /usr/local/ec2
 
 echo "It takes some time for jenkins to come up so we need to look through this a few times"
 wget "http://`hostname -f`:8080/jnlpJars/jenkins-cli.jar"

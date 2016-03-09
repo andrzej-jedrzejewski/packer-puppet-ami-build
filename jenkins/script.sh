@@ -32,7 +32,7 @@ import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.jso
 sleep 5s
 echo "Yor image ID is as follow:"
 echo $import_task_id
-echo "Your status of image creatio is as follow(update every minute):"
+echo "Your status of image creatio is as follows (update every minute):"
 
 import_task_progress="0"
 import_task_status="default"
@@ -49,7 +49,9 @@ done
 #Read image ID
 AMI_ID="$(aws ec2 describe-import-image-tasks --import-task-ids $import_task_id | jsawk  'return this.ImportImageTasks' | jsawk -n 'out(this.ImageId)')"
 
-ls
+sleep 5
+
+aws ec2 create-tags --resources $AMI_ID --tags "Key="Name",Value=$ova_file"
 
 echo "Image creation has finished!"
 echo "AMI ID is: $AMI_ID"

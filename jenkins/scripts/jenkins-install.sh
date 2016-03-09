@@ -5,8 +5,8 @@ sleep 10
 
 echo "Installing Jenkins"
 wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt-get update -y
-sudo apt-get install -y jenkins git
+sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+apt-get update -y
+apt-get install -y jenkins git
 
-sudo service jenkins start
+service jenkins start
