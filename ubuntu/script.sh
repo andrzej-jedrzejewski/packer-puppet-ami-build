@@ -4,6 +4,8 @@
 #2. upload created image to amazon s3 bucket
 #3. verify created image
 #4. create test VM
+#exit if error occurs
+set -e
 
 ova_directory="$(jsawk 'return this.output_directory' < variables.json)"
 ova_directory="$ova_directory$(jsawk 'return this.profile' < variables.json)"
@@ -32,7 +34,7 @@ import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.jso
 sleep 5s
 echo "Yor image ID is as follow:"
 echo $import_task_id
-echo "Your status of image creatio is as follow(update every minute):"
+echo "Your status of image creation is as follows (update every minute):"
 
 import_task_progress="0"
 import_task_status="default"

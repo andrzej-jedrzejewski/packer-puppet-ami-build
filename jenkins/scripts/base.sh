@@ -8,6 +8,5 @@ sed -i -e 's/%sudo  ALL=(ALL:ALL) ALL/%sudo  ALL=NOPASSWD:ALL/g' /etc/sudoers
 
 echo "UseDNS no" >> /etc/ssh/sshd_config
 
-mkdir -p /home/ubuntu/.ssh
-chown -R ubuntu:ubuntu /home/ubuntu
+
 

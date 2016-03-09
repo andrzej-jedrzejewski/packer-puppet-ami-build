@@ -57,8 +57,7 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/virtualbox.sh",
-            "scripts/create-ssh-key.sh",
-            "scripts/plugins-install.sh",
+            "scripts/key.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]
