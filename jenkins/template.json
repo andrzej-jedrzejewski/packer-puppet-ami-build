@@ -57,13 +57,8 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/virtualbox.sh",
-            "scripts/java.sh",
-            "scripts/jenkins-install.sh",
             "scripts/create-ssh-key.sh",
             "scripts/plugins-install.sh",
-            "scripts/install-packer.sh",
-            "scripts/setup-jobs.sh",
-            "scripts/cloud.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]
