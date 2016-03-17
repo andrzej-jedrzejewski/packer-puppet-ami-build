@@ -1,0 +1,16 @@
+{
+    "os":"centos6",
+    "version":"6",
+    "os_type":"RedHat_64",
+    "iso_url": "http://www.mirrorservice.org/sites/mirror.centos.org/6/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
+    "iso_checksum": "411da8c3f66839eef9ae47bf4515cc0b82f2a1dfc7b2d5bde2d203ca7e3220f3",
+    "iso_checksum_type": "sha256",
+    "profile": "lvm-xfs",
+    "name": "xfs",
+    "disk_size": "8192",
+    "ssh_username": "centos",
+    "ssh_password": "centos",
+    "output_directory": "/tmp/packer_output/",
+    "run_virtualbox_in_background": "false",
+    "S3_bucket_name": "andrzejjbucket"
+  }

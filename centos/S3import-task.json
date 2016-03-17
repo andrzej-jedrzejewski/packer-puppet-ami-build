@@ -4,7 +4,7 @@
     "Description": "The first image",
     "UserBucket": {
       "S3Bucket": "andrzejjbucket",
-      "S3Key" : "centos7-lvm-xfs.ova"
+      "S3Key" : "centos6-lvm-xfs.ova"
     }
   }
   ]

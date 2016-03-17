@@ -17,7 +17,7 @@ aws ec2 describe-import-image-tasks --import-task-ids "import-ami-fh08peq4"
 Installation
 -----------
 
-Run Packer to build the AMI:
+Run script.sh to build the AMI and upload it to AWS:
 ```
-$ packer build quick-start.json
+$ ./script.sh varaibles.json
 ```

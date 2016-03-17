@@ -6,13 +6,14 @@
 #4. create test VM
 #exit if error occurs
 set -e
+variables_file=$1
 
-ova_directory="$(jsawk 'return this.output_directory' < variables.json)"
-ova_directory="$ova_directory$(jsawk 'return this.profile' < variables.json)"
-ova_file="$ova_file$(jsawk 'return this.os' < variables.json)"
-ova_file="$ova_file-$(jsawk 'return this.profile' < variables.json)"
+ova_directory="$(jsawk 'return this.output_directory' < $variables_file)"
+ova_directory="$ova_directory$(jsawk 'return this.profile' < $variables_file)"
+ova_file="$ova_file$(jsawk 'return this.os' < $variables_file)"
+ova_file="$ova_file-$(jsawk 'return this.profile' < $variables_file)"
 ova_file="$ova_file.ova"
-S3_bucket="$(jsawk 'return this.S3_bucket_name' < variables.json)"
+S3_bucket="$(jsawk 'return this.S3_bucket_name' < $variables_file)"
 
 S3Key="$(cat S3import-task.json| jsawk 'return this.DiskContainers' | jsawk 'return this.UserBucket' | jsawk -n 'out(this.S3Key)')"
 sed -i -- "s/$S3Key/$ova_file/g" S3import-task.json
@@ -26,7 +27,7 @@ if [ -a "$ova_directory/$ova_file" ]; then
     echo "Old file has been deleted!"
 fi
 
-packer build -var-file=variables.json template.json  &&  echo "Image creation is done!" 
+packer build -var-file=$variables_file template.json  &&  echo "Image creation is done!"
 
 aws s3 cp "$ova_directory/$ova_file" s3://$S3_bucket
 

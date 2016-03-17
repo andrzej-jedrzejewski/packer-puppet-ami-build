@@ -58,6 +58,12 @@
             "scripts/base.sh",
             "scripts/virtualbox.sh",
             "scripts/key.sh",
+            "scripts/java.sh",
+            "scripts/jenkins-install.sh",
+            "scripts/create-ssh-key.sh",
+            "scripts/plugins-install.sh",
+            "scripts/install-packer.sh",
+            "scripts/setup-jobs.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]

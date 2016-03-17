@@ -13,7 +13,7 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "http_directory": "http",
       "boot_command": [
-        "<tab> text ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks-{{user `name`}}.cfg<enter><wait>"
+        "<tab> text ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks-{{user `version`}}-{{user `name`}}.cfg<enter><wait>"
       ],
       "boot_wait": "10s",
       "ssh_username": "{{user `ssh_username`}}",
