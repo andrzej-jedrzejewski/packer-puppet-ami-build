@@ -15,13 +15,11 @@ The goals of this project are to:
 -----------
 1. Packer v0.8.6:[download](http://www.packer.io/downloads.html) and follow installation guide http://www.packer.io/intro/getting-started/setup.html.
 2. Virtualbox v5.0.14 [download](https://www.virtualbox.org/wiki/Downloads).
-3. AWS CLI:
-* Website: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
-VM import specification:
-* Website http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html
-Create a bucket in S3
+3. AWS tools:
++ CLI [installation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
++ VM import specification [website](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html)
++ Create your own S3 bucket (through website or [CLI](http://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html)
 
-aws ec2 describe-import-image-tasks --import-task-ids "import-ami-fh08peq4"
 
 ##Installation
 -----------
