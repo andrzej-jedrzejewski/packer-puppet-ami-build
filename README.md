@@ -4,8 +4,7 @@ Create AWS AMIs with packer
 
 Requirements
 -----------
-Packer v0.8.6:
-* Website: http://www.packer.io
+Packer v0.8.6:[download](http://www.packer.io)
 AWS CLI:
 * Website: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 VM import specification:
