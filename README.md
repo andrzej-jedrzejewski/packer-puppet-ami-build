@@ -2,6 +2,15 @@ Create AWS AMIs with packer
 =============
 
 
+##Goal
+The goals of this project are to:
++create ready-to-go AMI
++deploy application very fast
++speed up development workflow
++easly and fast create and start new machines on test/production environment
++not depends on vagrant boxes available publicly 
+
+
 ##Requirements
 -----------
 1. Packer v0.8.6:[download](http://www.packer.io/downloads.html) and follow installation guide http://www.packer.io/intro/getting-started/setup.html.
