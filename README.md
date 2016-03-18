@@ -4,11 +4,11 @@ Create AWS AMIs with packer
 
 ##Goal
 The goals of this project are to:
-+create ready-to-go AMI
-+deploy application very fast
-+speed up development workflow
-+easly and fast create and start new machines on test/production environment
-+not depends on vagrant boxes available publicly 
++ create ready-to-go AMI
++ deploy application very fast
++ speed up development workflow
++ easly and fast create and start new machines on test/production environment
++ not depends on vagrant boxes available publicly 
 
 
 ##Requirements
