@@ -34,6 +34,11 @@ The goals of this project are to:
 
 
 ##TODO
++
++
++
++
+
 
 
 ######All was created and tested on Macbook with OS X El Capitan (10.11.3 (15D21)). I don't promise that this will work as it is on every system (especially windows ;P)
