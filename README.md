@@ -8,7 +8,7 @@ The goals of this project are to:
 + deploy application very fast
 + speed up development workflow
 + easly and fast create and start new machines on test/production environment
-+ not depends on vagrant boxes available publicly 
++ not depends on vagrant boxes available publicly
 
 
 ##Requirements
@@ -18,13 +18,18 @@ The goals of this project are to:
 3. AWS tools:
 + CLI [installation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 + VM import specification [website](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html)
-+ Create your own S3 bucket (through website or [CLI](http://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html)
++ Create your own S3 bucket (through website or [CLI](http://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.htm)
 
 
-##Installation
+##Build image
 -----------
-
+Make you own configuration orf use default varaibles.json
 Run script.sh to build the AMI and upload it to AWS:
 ```
-$ ./script.sh varaibles.json
+$ script.sh
 ```
+
+
+####All was created and tested on Macbook with OS X El Capitan (10.11.3 (15D21)).  I don't promise that this will work as it is on every system (especially windows ;P)
+
+####Pull request are welcom!
