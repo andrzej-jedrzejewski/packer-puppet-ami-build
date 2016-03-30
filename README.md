@@ -12,7 +12,6 @@ The goals of this project are to:
 
 
 ##Requirements
------------
 1. Packer v0.8.6:[download](http://www.packer.io/downloads.html) and follow installation guide http://www.packer.io/intro/getting-started/setup.html.
 2. Virtualbox v5.0.14 [download](https://www.virtualbox.org/wiki/Downloads).
 3. AWS tools:
@@ -22,19 +21,16 @@ The goals of this project are to:
 
 
 ##Build image
------------
 Make you own configuration orf use default varaibles.json
 Run script.sh to build the AMI and upload it to AWS:
-```
-$ script.sh
-```
+
 
 
 
 
 
 ##All was created and tested on Macbook with OS X El Capitan (10.11.3 (15D21)). I don't promise that this will work as it is on every system (especially windows ;P)
------------
+
 
 ##Pull request are welcom!
------------
+
