@@ -7,13 +7,13 @@
 #exit if error occurs
 set -e
 
+#-------------------=========READ CONFIGURATION FILE ANS SET UP VARIABLES==========--------------------------
 ova_directory="$(jsawk 'return this.output_directory' < variables.json)"
 ova_directory="$ova_directory$(jsawk 'return this.profile' < variables.json)"
 ova_file="$ova_file$(jsawk 'return this.os' < variables.json)"
 ova_file="$ova_file-$(jsawk 'return this.profile' < variables.json)"
 ova_file="$ova_file.ova"
 S3_bucket="$(jsawk 'return this.S3_bucket_name' < variables.json)"
-
 S3Key="$(cat S3import-task.json| jsawk 'return this.DiskContainers' | jsawk 'return this.UserBucket' | jsawk -n 'out(this.S3Key)')"
 sed -i -- "s/$S3Key/$ova_file/g" S3import-task.json
 rm S3import-task.json--
@@ -25,10 +25,15 @@ if [ -a "$ova_directory/$ova_file" ]; then
     rm -rf "$ova_directory"
     echo "Old file has been deleted!"
 fi
+
+#-------------------=========RUN PACKER==========--------------------------
 packer build -var-file=variables.json template.json  &&  echo "Image creation is done!" 
 
+#-------------------=========COPY FILE TO S3 BUCKET==========--------------------------
 aws s3 cp "$ova_directory/$ova_file" s3://$S3_bucket
 
+
+#-------------------=========CREATE AMI==========--------------------------
 import_task_id="$(aws ec2 import-image --cli-input-json file://S3import-task.json --description $ova_file | jsawk -n 'out(this.ImportTaskId)')"
 sleep 5s
 echo "Yor image ID is as follow:"
