@@ -23,6 +23,15 @@ The goals of this project are to:
 ##Build image
 + Make you own configuration orf use default varaibles.json
 + Run script.sh to build the AMI and upload it to AWS:
+  ```
+    $ script.sh
+  ```
+
+
+  
+
+
+
 
 
 ######All was created and tested on Macbook with OS X El Capitan (10.11.3 (15D21)). I don't promise that this will work as it is on every system (especially windows ;P)
