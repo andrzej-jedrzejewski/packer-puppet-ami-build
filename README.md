@@ -24,9 +24,12 @@ The goals of this project are to:
 + Make you own configuration orf use default varaibles.json
 + Run script.sh to build the AMI and upload it to AWS:
   ```
-    $ script.sh
+    $ run.sh
   ```
-
++ If you want to run packer in debug mode use:
+  ```
+    $ runpackerDebug.sh
+  ```
 
   
 
