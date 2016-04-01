@@ -34,9 +34,9 @@ The goals of this project are to:
 
 
 ##TODO(phase II)
-+create puppet repo with set of puppet modules
-+create packer repo that allows us to create an image with specific puppet module installed
-+build jenkins for do everythings remotely
++ create puppet repo with set of puppet modules
++ create packer repo that allows us to create an image with specific puppet module installed
++ build jenkins for do everythings remotely
 
 
 
