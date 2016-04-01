@@ -21,15 +21,15 @@ The goals of this project are to:
 
 
 ##Build image
-+ Make you own configuration orf use default varaibles.json
-+ Run script.sh to build the AMI and upload it to AWS:
-  ```
++ Make you own configuration or use default varaibles.json
++ Run script to build the AMI and upload it to AWS:
+```
     $ run.sh
-  ```
+```
 + If you want to run packer in debug mode use:
-  ```
+```
     $ runpackerDebug.sh
-  ```
+```
 
 
 
